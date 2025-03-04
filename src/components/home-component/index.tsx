@@ -48,7 +48,6 @@ const Home = () => {
             {/* <!-- Contact Section --> */}
             <Contact />
             {/* <!-- /Contact Section --> */}
-
         </main >
     )
 };

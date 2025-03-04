@@ -2,7 +2,7 @@ import "./footer.css";
 
 const Footer = () => {
     return (
-        <footer id="footer" className="footer dark-background">
+        <footer id="footer" className="footer dark-background d-none d-md-flex">
             <div className="container">
                 <h3 className="sitename">Dyvaswarupi</h3>
                 <p>Dyvaswarupi Association – Spreading Faith, Hope, and Divine Love!</p>

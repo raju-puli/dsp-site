@@ -123,3 +123,41 @@
         /* max-height: 1vh; */
     }
 }
+
+
+
+
+
+
+
+
+
+.mobile-footer-box {
+    border: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    z-index: 9998;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: perspective(10px) rotateX(1deg) translateY(-30px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible-footer {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-footer-box {
+        position: fixed !important;
+    }
+
+    #scroll-top {
+        margin-bottom: 45px !important;
+    }
+}

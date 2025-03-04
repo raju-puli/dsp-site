@@ -88,11 +88,22 @@ const Songs = () => {
         }
     };
 
+    // const BackButton = () => {
+
+    //     button.addEventListener("click", () => {
+    //         window.history.back();
+    //     });
+
+    //     document.body.appendChild(button);
+    // }
+
+
+
     return (
         <div id="SongsBook">
             <header className="d-flex align-items-center justify-content-between p-3 bg-dark-gray text-white">
                 {/* Back Button */}
-                <button type="button" className="back-btn me-2" aria-label="Go Back" onClick={() => navigate("/main")}>
+                <button type="button" className="back-btn me-2" aria-label="Go Back" onClick={() => navigate(-1)}>
                     <i className="bi bi-arrow-left-circle fs-4"></i>
                     <span className="d-none d-md-flex"> Back </span>
                 </button>
