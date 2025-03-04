@@ -119,11 +119,10 @@
 
 @media screen and (max-width: 576px) and (orientation: portrait) {
     #hero img.img-fluid {
-        width: 55vw;
+        width: 50vw;
         /* max-height: 1vh; */
     }
 }
-
 
 
 
@@ -146,6 +145,15 @@
     visibility: hidden;
 }
 
+.mobile-footer-box li {
+    list-style-type: none;
+}
+
+.mobile-footer-box li a.active {
+    border-bottom: 3px solid;
+    color: #fff;
+}
+
 .visible-footer {
     transform: translateY(0) !important;
     opacity: 1 !important;
@@ -155,9 +163,21 @@
 @media (max-width: 768px) {
     .mobile-footer-box {
         position: fixed !important;
+        overflow-x: auto;
+        box-shadow: 2px 3px 4px 9px #00000033;
     }
 
     #scroll-top {
         margin-bottom: 45px !important;
+    }
+}
+
+
+
+@media (min-width: 360px) and (max-width: 1440px) {
+    #hero .container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }

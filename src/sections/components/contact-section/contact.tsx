@@ -42,7 +42,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <div className="container" data-aos="fade-up" data-aos-delay="100">
+            <div className="container mb-5" data-aos="fade-up" data-aos-delay="100">
                 <div className="row gy-4">
                     <div className="col-lg-8">
                         <div className="mb-4" data-aos="fade-up" data-aos-delay="200">
