@@ -18,96 +18,36 @@ const Multimedia = () => {
 
                     <div className="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-6 portfolio-item isotope-item filter-app">
-                            <div className="portfolio-content">
-                                <div className="card mb-4 box-shadow" onClick={() => navigate("/songs")}>
-                                    <div className="card-deck mb-1 text-center">
-                                        <div className="card-body">
-                                            <i className="bi bi-music-note fs-1 com-icon"></i>
-                                            <h4 className="card-title pricing-card-title">Songs</h4>
-                                            <p className="mt-3 mb-4">Sing or listen to our uplifting worship and gospel songs. 🎶</p>
+                        <div className="portfolio-item isotope-item filter-app">
+                            <div className="portfolio-content p-2">
+                                <div className="row d-flex align-items-center justify-content-between g-3">
+                                    {[
+                                        { title: "Songs", content: "Sing or listen to our uplifting worship and gospel songs. 🎶", icon: "bi-music-note", link: "/songs" },
+                                        { title: "Events", content: "Stay connected with past and upcoming spiritual gatherings.", icon: "bi-calendar-week" },
+                                        { title: "Sermons & Teachings", content: "Gain wisdom through powerful sermons and biblical teachings.", icon: "bi-mic" },
+                                        { title: "Gallery", content: "Explore glorious moments of our events, meetings, and worship. ✨", icon: "bi-images" },
+                                        { title: "Bible", content: "Read, reflect, and grow with the Holy Scriptures for your journey. 📖✨", icon: "bi-journal-text", comingSoon: true },
+                                        { title: "Testimonials & Stories", content: "Be inspired by real-life stories of faith and transformation.", icon: "bi-quote", comingSoon: true }
+                                    ].map((item, index) => (
+                                        <div key={index} className="col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div
+                                                className="card box-shadow mb-4"
+                                                onClick={item.link ? () => navigate(item.link) : undefined}
+                                            >
+                                                <div className="card-body text-center">
+                                                    <i className={`bi ${item.icon} fs-1 com-icon`}></i>
+                                                    <h4 className="card-title pricing-card-title">{item.title}</h4>
+                                                    <p className="mt-3 mb-4">{item.content}</p>
+                                                    {item.comingSoon && <span className="card-title pricing-card-title">Coming Soon...</span>}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-6 portfolio-item isotope-item filter-app">
-                            <div className="portfolio-content">
-                                <div className="card mb-4 box-shadow">
-                                    <div className="card-deck mb-1 text-center">
-                                        <div className="card-body">
-                                            <i className="bi bi-calendar-week fs-1 com-icon"></i>
-                                            <h4 className="card-title pricing-card-title">Events</h4>
-                                            <p className="mt-3 mb-4">Stay connected with past and upcoming spiritual gatherings.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-6 portfolio-item isotope-item filter-app">
-                            <div className="portfolio-content">
-                                <div className="card mb-4 box-shadow">
-                                    <div className="card-deck mb-1 text-center">
-                                        <div className="card-body">
-                                            <i className="bi bi-mic fs-1 com-icon"></i>
-                                            <h4 className="card-title pricing-card-title">Sermons & Teachings</h4>
-                                            <p className="mt-3 mb-4">Gain wisdom through powerful sermons and biblical teachings.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-6 portfolio-item isotope-item filter-app">
-                            <div className="portfolio-content">
-                                <div className="card mb-4 box-shadow">
-                                    <div className="card-deck mb-1 text-center">
-                                        <div className="card-body">
-                                            <i className="bi bi-images fs-1 com-icon"></i>
-                                            <h4 className="card-title pricing-card-title">Gallery</h4>
-                                            <p className="mt-3 mb-4">Explore glorious moments of our events, meetings, and worship. ✨</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-6 portfolio-item isotope-item filter-app">
-                            <div className="portfolio-content">
-                                <div className="card mb-4 box-shadow">
-                                    <div className="card-deck mb-1 text-center">
-                                        <div className="card-body">
-                                            <i className="bi bi-journal-text fs-1 com-icon"></i>
-                                            <h4 className="card-title pricing-card-title">Bible</h4>
-                                            <p className="mt-3 mb-4">Read, reflect, and grow with the Holy Scriptures for your journey. 📖✨</p>
-                                        </div>
-                                    </div>
-                                    <span>
-                                        <h4 className="card-title pricing-card-title">Comming Soon...</h4>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-6 portfolio-item isotope-item filter-app">
-                            <div className="portfolio-content">
-                                <div className="card mb-4 box-shadow">
-                                    <div className="card-deck mb-1 text-center">
-                                        <div className="card-body">
-                                            <i className="bi bi-quote fs-1 com-icon"></i>
-
-                                            <h4 className="card-title pricing-card-title">Testimonials & Stories</h4>
-                                            <p className="mt-3 mb-4">Be inspired by real-life stories of faith and transformation.</p>
-                                        </div>
-                                        <span>
-                                            <h4 className="card-title pricing-card-title">Comming Soon...</h4>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         {/* <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                             <div className="portfolio-content h-100">

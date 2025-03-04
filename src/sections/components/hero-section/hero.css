@@ -3,7 +3,7 @@
 }
 
 #hero img.img-fluid {
-    width: clamp(18vw, 150px, 35vw);
+    width: clamp(16vw, 150px, 35vw);
     /* margin: -25vh auto; */
     /* overflow: visible; */
     filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
@@ -180,4 +180,10 @@
         align-items: center !important;
         justify-content: center !important;
     }
+}
+
+
+.prayer-time {
+    font-size: 1rem;
+    font-weight: bold;
 }

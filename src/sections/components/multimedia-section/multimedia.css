@@ -12,21 +12,20 @@
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(1px);
-
-    >h4 {
-        margin-top: 10%;
-    }
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 6%;
 }
 
 
 @media (min-width:415px) and (max-width:1399px) {
-    .card span h4 {
+    .card span {
         margin-top: 5%;
     }
 }
 
 @media (max-width:414px) {
-    .card span h4 {
+    .card span {
         margin-top: 0%;
     }
 }
