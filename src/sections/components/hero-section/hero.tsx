@@ -65,8 +65,7 @@ const Hero = () => {
                         <img src="/assets/logo.png" className="img-fluid" alt="Website Logo" />
                         <div className="col-lg-8">
                             <h2>ALL GLORY TO THE LORD</h2>
-                            {/* <i> <a href="/" className="prayer-time">Today is {today}, Prayer Time: {prayerTime}</a></i> */}
-                            <i> <a href="/" className="prayer-time">Arun</a></i>
+                            <i> <a href="/" className="prayer-time">Today is {today}, Prayer Time: {prayerTime}</a></i>
                             <p className={`fade-text ${fade ? "fade-in" : "fade-out"} d-flex flex-column`}>
                                 <span>{isEnglish ? DailyBibleVerses[currentIndex - 1].text : DailyBibleVerses[currentIndex].text}</span>
                                 <small>{isEnglish ? DailyBibleVerses[currentIndex - 1].ref : DailyBibleVerses[currentIndex].ref}</small>
