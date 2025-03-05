@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import "./header.css";
 import useScrollLogo from "../../sections/utility/scrollEvents";
+import { NavigationLinks } from "../../sections/utility/main";
+
+import "./header.css";
 
 const Header = () => {
     const showLogo = useScrollLogo();
@@ -60,17 +62,10 @@ const Header = () => {
                 <nav id="navmenu" className="navmenu">
                     {isMenuOpen && <div className="back_cover active" onClick={handleMenuOption} />}
                     <ul className={isMenuOpen ? "open" : ""}>
-                        {[
-                            { id: "#hero", label: "Home" },
-                            { id: "#about", label: "About" },
-                            { id: "#services", label: "Services" },
-                            { id: "#multimedia", label: "Multimedia" },
-                            { id: "#team", label: "Team" },
-                            { id: "#contact", label: "Contact" },
-                        ].map(({ id, label }) => (
+                        {NavigationLinks.map(({ id, label, icon }) => (
                             <li key={id}>
                                 <a href={id} className={activeNav === id ? "active" : ""} onClick={handleNavClick}>
-                                    {label}
+                                    <i className={`fas ${icon} menu-icons`}></i> {label}
                                 </a>
                             </li>
                         ))}

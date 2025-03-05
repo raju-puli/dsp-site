@@ -149,9 +149,13 @@
     list-style-type: none;
 }
 
+.mobile-footer-box li a {
+    color: #fff !important;
+}
+
 .mobile-footer-box li a.active {
     border-bottom: 3px solid;
-    color: #fff;
+    color: var(--accent-color) !important;
 }
 
 .visible-footer {

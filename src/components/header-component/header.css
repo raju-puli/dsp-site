@@ -25,6 +25,18 @@
         opacity: 1;
         visibility: visible;
     }
+
+    .navmenu ul li a {
+        justify-content: flex-start;
+    }
+
+    /* .navmenu ul li a i {
+    
+    } */
+    .menu-icons {
+        /* rotate: 180deg; */
+        margin-right: 1rem;
+    }
 }
 
 .header .logo h1 {

@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import useScrollLogo from "../../utility/scrollEvents";
-import "./hero.css";
+import DailyBibleVerses from "../../utility/dailyBibleVerses";
+import { NavigationLinks } from "../../utility/main";
 
-const texts = [
-    { text: "The Lord is my strength and my shield; my heart trusts in Him.", ref: "(Psalm 28:7)" },
-    { text: "కర్తయే నా బలము, నా గోపురము; నా హృదయము ఆయనయందు విశ్వాసము కలిగియున్నది.", ref: "(కీర్తనల గ్రంథము 28:7)" },
-    { text: "Trust in the Lord with all your heart and lean not on your own understanding.", ref: "(Proverbs 3:5)" },
-    { text: "యెహోవాలో పూర్తిగా నమ్మకం ఉంచి, నీ స్వంత బుద్ధిని ఆధారపడి ఉండకు.", ref: "(సామెతలు 3:5)" }
-];
+import "./hero.css";
 
 const prayerTimings: Record<string, string> = {
     Sunday: "10:30 AM - 1:00 PM",
@@ -23,10 +19,8 @@ const Hero = () => {
     const [activeNav, setActiveNav] = useState("#hero");
     const [isEnglish, setIsEnglish] = useState(true);
 
-    // Ensure index stays within valid bounds
-    const currentIndex = Math.floor(new Date().getDate() % (texts.length / 2));
+    const currentIndex = Math.floor(new Date().getDate() % (DailyBibleVerses.length / 2));
 
-    // Get today's prayer timing safely
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof prayerTimings;
     const prayerTime = prayerTimings[today] || "No scheduled prayers today";
 
@@ -70,11 +64,12 @@ const Hero = () => {
                     <div className="row justify-content-center flex-column align-items-center">
                         <img src="/assets/logo.png" className="img-fluid" alt="Website Logo" />
                         <div className="col-lg-8">
-                            <h2>All Glory to the Lord</h2>
-                            <i> <a href="/" className="prayer-time">Today is {today}, Prayer Time: {prayerTime}</a></i>
+                            <h2>ALL GLORY TO THE LORD</h2>
+                            {/* <i> <a href="/" className="prayer-time">Today is {today}, Prayer Time: {prayerTime}</a></i> */}
+                            <i> <a href="/" className="prayer-time">Arun</a></i>
                             <p className={`fade-text ${fade ? "fade-in" : "fade-out"} d-flex flex-column`}>
-                                <span>{isEnglish ? texts[currentIndex].text : texts[currentIndex + 1].text}</span>
-                                <small>{isEnglish ? texts[currentIndex].ref : texts[currentIndex + 1].ref}</small>
+                                <span>{isEnglish ? DailyBibleVerses[currentIndex - 1].text : DailyBibleVerses[currentIndex].text}</span>
+                                <small>{isEnglish ? DailyBibleVerses[currentIndex - 1].ref : DailyBibleVerses[currentIndex].ref}</small>
                             </p>
                             <a href="#about" className="btn-get-started">Get Started</a>
                         </div>
@@ -92,17 +87,10 @@ const Hero = () => {
             </section >
 
             <div className={`footer d-flex justify-content-around align-items-center bg-secondary text-white p-0 fixed-bottom mobile-footer-box d-md-none ${showLogo ? "visible-footer" : ""}`}>
-                <ul className="nav">
-                    {[
-                        { id: "#hero", label: "Home", icon: "fa-home" },
-                        { id: "#about", label: "About", icon: "fa-info-circle" },
-                        { id: "#services", label: "Services", icon: "fa-briefcase" },
-                        { id: "#multimedia", label: "Multimedia", icon: "fa-photo-video" },
-                        { id: "#team", label: "Team", icon: "fa-users" },
-                        { id: "#contact", label: "Contact", icon: "fa-phone" },
-                    ].map(({ id, label, icon }) => (
+                <ul className="nav flex-nowrap">
+                    {NavigationLinks.map(({ id, label, icon }) => (
                         <li key={id} className="nav-item">
-                            <a href={id} className={`nav-link d-flex flex-column p-3 pb-0 ${activeNav === id ? "active" : ""}`}>
+                            <a href={id} className={`d-flex flex-column p-3 pb-0 ${activeNav === id ? "active" : ""}`}>
                                 <i className={`fas ${icon}`}></i> {label}
                             </a>
                         </li>
