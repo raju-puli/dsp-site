@@ -26,6 +26,10 @@
         visibility: visible;
     }
 
+    .navmenu ul li a.active .menu-icons {
+        transform: rotate(0deg) !important;
+    }
+
     .navmenu ul li a {
         justify-content: flex-start;
     }
@@ -72,4 +76,14 @@
     .header .logo h1.sitename {
         font-size: 5vw;
     }
+}
+
+
+.mobile-nav-toggle {
+    font-size: calc(2rem + .3vw) !important;
+}
+
+.bi-calendar:hover {
+    color: var(--accent-color);
+    cursor: pointer;
 }

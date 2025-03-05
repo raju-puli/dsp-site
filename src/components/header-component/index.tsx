@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import useScrollLogo from "../../sections/utility/scrollEvents";
 import { NavigationLinks } from "../../sections/utility/main";
+import { useNavigate } from "react-router-dom";
 
 import "./header.css";
 
 const Header = () => {
+    const navigate = useNavigate();
     const showLogo = useScrollLogo();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeNav, setActiveNav] = useState("#hero");
@@ -59,18 +61,21 @@ const Header = () => {
                     </h1>
                 </a>
 
-                <nav id="navmenu" className="navmenu">
+                <nav id="navmenu" className="navmenu d-flex align-items-center">
                     {isMenuOpen && <div className="back_cover active" onClick={handleMenuOption} />}
                     <ul className={isMenuOpen ? "open" : ""}>
                         {NavigationLinks.map(({ id, label, icon }) => (
                             <li key={id}>
                                 <a href={id} className={activeNav === id ? "active" : ""} onClick={handleNavClick}>
-                                    <i className={`fas ${icon} menu-icons`}></i> {label}
+                                    <i className={`fas ${icon} menu-icons d-md-none`}></i> {label}
                                 </a>
                             </li>
                         ))}
                     </ul>
+                    <i className="bi bi-calendar fs-4 ms-4 me-4" onClick={() => navigate("/calendar")} />
+
                     <i className={`mobile-nav-toggle d-xl-none bi ${isMenuOpen ? "bi-x" : "bi-list"}`} onClick={handleMenuOption}></i>
+
                 </nav>
             </div>
         </header>

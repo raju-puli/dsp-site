@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+#calendar {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: "Poppins", serif;
+    /* background-image: url(/assets/img/hero-bg.jpg); */
+    /* background: rgb(238, 174, 202);
+    background: radial-gradient(circle,
+            rgba(238, 174, 202, 1) 0%,
+            rgba(148, 187, 233, 1) 100%); */
+}
+
+.bg-image {
+    position: fixed;
+}
+
+#calendar .calendar-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#calendar .calendar-grid label {
+    font-size: 1rem;
+    color: #555;
+}
+
+#calendar .calendar-grid label select {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+#calendar ul.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#calendar ul.calendar-container div.weekdays {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 5px;
+    text-align: center;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+}
+
+#calendar h1 {
+    font-weight: 800;
+    margin: 1rem 0 0;
+}
+
+#calendar ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+        display: flex;
+        width: 10rem;
+        height: 10rem;
+        margin: 0.25rem;
+        flex-flow: column;
+        border-radius: 0.2rem;
+        padding: 1rem;
+        font-weight: 300;
+        font-size: 0.8rem;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        time {
+            font-size: 2rem;
+            margin: 0 0 1rem 0;
+            font-weight: 500;
+        }
+    }
+
+    .today {
+        time {
+            font-weight: 800;
+        }
+
+        background: #ffffff70;
+    }
+}
+
+
+#calendar .highlightTodayCls {
+    box-shadow: 0 0 5px 2px skyblue;
+    /* color: none; */
+}
+
+#calendar ul div.weekdays {
+    color: gainsboro !important;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+#calendar ul li {
+    color: gainsboro !important;
+}
+
+#calendar .highlightTodayCls time {
+    /* color: transparent; */
+    /* background: radial-gradient(circle,
+            rgba(238, 174, 202, 1) 0%,
+            rgba(148, 187, 233, 1) 100%); */
+    /* background-image: linear-gradient(rgb(255, 0, 111), rgb(0, 119, 255));
+    background-clip: text; */
+    /* color: #000; */
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+#calendar .back-btn {
+    position: fixed;
+    top: 2%;
+    left: 2%;
+}
+
+#calendar .head-content p {
+    color: antiquewhite;
+}
+
+
+
+
+@media (min-width:991px) and (max-width:1216px) {
+    #calendar ul li {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+@media (min-width:769px) and (max-width:990px) {
+    #calendar ul li {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    #calendar ul li time {
+        font-size: 2rem;
+        margin: unset;
+        font-weight: 500;
+    }
+}
+
+@media (min-width:577px) and (max-width:768px) {
+    #calendar {
+        height: 100vh;
+    }
+
+    #calendar ul li {
+        width: 4rem;
+        height: 4rem;
+        padding: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    #calendar ul li time {
+        font-size: 25px;
+        margin: unset;
+        font-weight: 500;
+    }
+
+    #calendar .calendar-grid label select {
+        padding: unset;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width:576px) {
+    #calendar {
+        height: 100vh;
+    }
+
+    #calendar .head-content {
+        flex-direction: column;
+    }
+
+    #calendar ul li {
+        width: 3rem;
+        height: 3rem;
+        padding: 3px;
+        margin: unset;
+        font-size: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #calendar ul li time {
+        font-size: 18px;
+        margin: unset;
+        font-weight: 500;
+    }
+
+    #calendar .calendar-grid label select {
+        padding: unset;
+        margin-left: 0px;
+    }
+}

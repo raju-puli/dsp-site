@@ -1,9 +1,10 @@
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import App from "./App";
 import Footer from "./components/footer-component";
 import Header from "./components/header-component";
 import Home from "./components/home-component";
 import Songs from "./components/songs-component";
+import Calendar from "./sections/components/calendar-section/calendar";
 
 const NotFound = () => <p>Page Not Found</p>;
 
@@ -25,7 +26,8 @@ const AppRouter = [
         children: [
             { index: true, element: <Main /> },  // ⬅ Set Main directly instead of Navigate
             { path: "main", element: <Main /> },
-            { path: "songs", element: <Songs /> }
+            { path: "songs", element: <Songs /> },
+            { path: "calendar", element: <Calendar /> }
         ]
     }
 ];

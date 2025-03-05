@@ -1,5 +1,5 @@
 import About from "../../sections/components/about-section/about";
-import Action from "../../sections/components/action-section/action";
+import WeeklyCalendar from "../../sections/components/weekly-section/weeklyCalendar";
 import Contact from "../../sections/components/contact-section/contact";
 import Hero from "../../sections/components/hero-section/hero";
 import Multimedia from "../../sections/components/multimedia-section/multimedia";
@@ -30,7 +30,7 @@ const Home = () => {
             {/* <!-- /Services Section --> */}
 
             {/* <!-- Call To Action Section --> */}
-            <Action />
+            <WeeklyCalendar />
             {/* <!-- /Call To Action Section --> */}
 
             {/* <!-- Multimedia Section --> */}

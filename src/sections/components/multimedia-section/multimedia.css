@@ -17,7 +17,6 @@
     margin-top: 6%;
 }
 
-
 @media (min-width:415px) and (max-width:1399px) {
     .card span {
         margin-top: 5%;
@@ -29,3 +28,34 @@
         margin-top: 0%;
     }
 }
+
+
+
+
+
+/* #multimedia .music-note {
+    animation: musicAnimation 2s infinite ease-in-out;
+    display: inline-block;
+    transform-origin: center;
+}
+
+@keyframes musicAnimation {
+    0% {
+        transform: translateX(0%) translateY(0%) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(10%) translateY(-10px) rotate(-10deg);
+    }
+    50% {
+        transform: translateX(20%) translateY(0%) rotate(10deg);
+    }
+    75% {
+        transform: translateX(30%) translateY(-10px) rotate(-10deg);
+    }
+    100% {
+        transform: translateX(40%) translateY(0%) rotate(10deg);
+        opacity: 0.5;
+    }
+} */
+
