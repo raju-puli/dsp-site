@@ -42,14 +42,12 @@ const Contact = () => {
                 </div>
             </section>
 
-            <div className="container mb-5" data-aos="fade-up" data-aos-delay="100">
+            <div className="container contact-details" data-aos="fade-up" data-aos-delay="100">
                 <div className="row gy-4">
                     <div className="col-lg-8">
                         <div className="mb-4" data-aos="fade-up" data-aos-delay="200">
                             {filterData.map((data) => (
-                                <iframe key={data.id} style={{ border: "0", width: "100%", height: "230px" }}
-                                    src={data.url}
-                                    loading="lazy" ></iframe>
+                                <iframe key={data.id} src={data.url} loading="lazy" ></iframe>
                             ))}
                         </div>
                     </div>

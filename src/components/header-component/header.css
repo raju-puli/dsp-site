@@ -76,6 +76,10 @@
     .header .logo h1.sitename {
         font-size: 5vw;
     }
+
+    .calendar-with-date {
+        height: 12px;
+    }
 }
 
 

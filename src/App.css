@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* ======================================= Back Cover Screen - Start ======================================= */
 .back_cover {
   position: fixed;
   inset: 0;
@@ -19,8 +20,10 @@
   opacity: 1;
 }
 
+/* ======================================= Back Cover Screen - End ======================================= */
 
 
+/* ======================================= Back Button - Start ======================================= */
 .back-btn {
   appearance: button;
   background-color: transparent;
@@ -55,4 +58,39 @@
 
 .back-btn:focus {
   outline: none;
+}
+
+/* ======================================= Back Button - End ======================================= */
+
+
+/* ======================================= Calendar Toggle - Start ======================================= */
+.calendar-with-date {
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  inset: 0;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  margin-top: 12px;
+}
+
+/* ======================================= Calendar Toggle - End ======================================= */
+
+
+
+.bg-dark-gray {
+  background-color: #474D52 !important;
+}
+
+
+
+.theam-btn {
+  border: 1px solid rgba(128, 128, 128, 0.363) !important;
+  box-shadow: -6px 8px 10px rgba(81, 41, 10, 0.1), 0px 2px 2px rgba(81, 41, 10, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
 }

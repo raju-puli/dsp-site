@@ -5,6 +5,7 @@ import Header from "./components/header-component";
 import Home from "./components/home-component";
 import Songs from "./components/songs-component";
 import Calendar from "./sections/components/calendar-section/calendar";
+import Sermons from "./components/sermons-component";
 
 const NotFound = () => <p>Page Not Found</p>;
 
@@ -27,7 +28,8 @@ const AppRouter = [
             { index: true, element: <Main /> },  // ⬅ Set Main directly instead of Navigate
             { path: "main", element: <Main /> },
             { path: "songs", element: <Songs /> },
-            { path: "calendar", element: <Calendar /> }
+            { path: "calendar", element: <Calendar /> },
+            { path: "sermons", element: <Sermons /> }
         ]
     }
 ];

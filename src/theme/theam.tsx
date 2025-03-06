@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import gsap from "gsap";
-import "./songs.css";
+import "../components/songs-component/songs.css";
 
 const Theme = () => {
     useEffect(() => {
@@ -19,10 +19,10 @@ const Theme = () => {
                 gsap.to(".star", { duration: 0.5, opacity: 1, ease: "power1.inOut" });
                 gsap.to("#night", { duration: 1, background: "#224f6d", borderColor: "#cad4d8", ease: "power1.inOut" });
                 gsap.to("#background", { duration: 1, background: "#0d1f2b", ease: "power1.inOut" });
-                gsap.to(".song-card", { duration: 1, background: "#e5e5e55c", color: "#fff", ease: "power1.inOut" });
-                gsap.to(".songs-list-menu", { duration: 1, background: "#e5e5e55c", color: "#fff", ease: "power1.inOut" });
-                gsap.to(".play-track-menu", { duration: 1, background: "#e5e5e55c", color: "#fff", ease: "power1.inOut" });
-                gsap.to(".menu-popup", { duration: 1, background: "#e5e5e55c", color: "#fff", ease: "power1.inOut" });
+                gsap.to(".song-card", { duration: 1, background: "#e5e5e55c", color: "rgb(207 207 207)", ease: "power1.inOut" });
+                gsap.to(".songs-list-menu", { duration: 1, background: "rgb(4 9 13 / 78%)", color: "rgb(207 207 207)", ease: "power1.inOut" });
+                gsap.to(".play-track-menu", { duration: 1, background: "rgb(4 9 13 / 78%)", color: "rgb(207 207 207)", ease: "power1.inOut" });
+                gsap.to(".menu-popup", { duration: 1, background: "rgb(4 9 13 / 78%)", color: "rgb(207 207 207)", border: "1px solid gray", ease: "power1.inOut" });
                 gsap.to("h3", { duration: 1, color: "#fff", ease: "power1.inOut" });
 
                 dayButton.style.pointerEvents = "none";

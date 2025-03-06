@@ -20,6 +20,8 @@ const Hero = () => {
     const [isEnglish, setIsEnglish] = useState(true);
 
     const currentIndex = Math.floor(new Date().getDate() % (DailyBibleVerses.length / 2));
+    console.log(currentIndex)
+    console.log(DailyBibleVerses[0].message)
 
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof prayerTimings;
     const prayerTime = prayerTimings[today] || "No scheduled prayers today";
@@ -67,8 +69,8 @@ const Hero = () => {
                             <h2>ALL GLORY TO THE LORD</h2>
                             <i> <a href="/" className="prayer-time">Today is {today}, Prayer Time: {prayerTime}</a></i>
                             <p className={`fade-text ${fade ? "fade-in" : "fade-out"} d-flex flex-column`}>
-                                <span>{isEnglish ? DailyBibleVerses[currentIndex - 1].text : DailyBibleVerses[currentIndex].text}</span>
-                                <small>{isEnglish ? DailyBibleVerses[currentIndex - 1].ref : DailyBibleVerses[currentIndex].ref}</small>
+                                <span>{isEnglish ? DailyBibleVerses[currentIndex].message[0].text : DailyBibleVerses[currentIndex].message[1].text}</span>
+                                <small>{isEnglish ? DailyBibleVerses[currentIndex].message[0].ref : DailyBibleVerses[currentIndex].message[1].ref}</small>
                             </p>
                             <a href="#about" className="btn-get-started">Get Started</a>
                         </div>
@@ -88,7 +90,7 @@ const Hero = () => {
             <div className={`footer d-flex justify-content-around align-items-center bg-secondary text-white p-0 fixed-bottom mobile-footer-box d-md-none ${showLogo ? "visible-footer" : ""}`}>
                 <ul className="nav flex-nowrap">
                     {NavigationLinks.map(({ id, label, icon }) => (
-                        <li key={id} className="nav-item">
+                        <li key={id} className="nav-item pb-2">
                             <a href={id} className={`d-flex flex-column p-3 pb-0 ${activeNav === id ? "active" : ""}`}>
                                 <i className={`fas ${icon}`}></i> {label}
                             </a>

@@ -1,0 +1,45 @@
+#sermons {
+    position: relative;
+    float: left;
+    width: 100%;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+#sermons header h3 img.logo {
+    position: absolute;
+    left: 0;
+}
+
+#sermons header h3 span {
+    margin-left: 100px;
+    color: #fff;
+}
+
+#sermons #background {
+    height: 100%;
+}
+
+
+
+
+@media(max-width:567px) {
+    #sermons h3.title-text {
+        justify-content: center;
+    }
+
+    #sermons h3.title-text img {
+        margin-right: 35px !important;
+    }
+
+    #sermons h3.title-text span {
+        display: none;
+    }
+
+    #sermons header h3 img.logo {
+        left: unset;
+    }
+}

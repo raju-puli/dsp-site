@@ -2,9 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import songsJson from "../../sections/json-files/songsList.json";
 import logo from "../../assets/logo.png";
-import Loader from "../../sections/loader/loader";
+import Theme from "../../theme/theam.tsx"
 
-import Theme from "./theam";
 import "./songs.css";
 
 type Song = {
@@ -19,9 +18,7 @@ type Song = {
 
 
 const Songs = () => {
-    // const [songsList, setSongsList] = useState(songsJson as Song[]);
     const [songsList, setSongsList] = useState<Song[]>(songsJson);
-    // const [showSearch, setShowSearch] = useState(false);
 
     const [loaderState, setLoaderState] = useState(true);
     const [isOpenFiterOption, setIsOpenFiterOption] = useState(false);
@@ -46,7 +43,7 @@ const Songs = () => {
 
         setTimeout(() => {
             setLoaderState(false);
-        }, 2000);
+        }, 1000);
     }, []);
 
     useEffect(() => {
@@ -94,21 +91,16 @@ const Songs = () => {
         }
     };
 
-    // const BackButton = () => {
-
-    //     button.addEventListener("click", () => {
-    //         window.history.back();
-    //     });
-
-    //     document.body.appendChild(button);
-    // }
-
-
 
     return (
         <>
             {loaderState ? (
-                <Loader />
+                <div className="songsBook">
+                    <section className="hero section dark-background bg-image">
+                        <img src="/assets/img/hero-bg.jpg" alt="Hero background" data-aos="fade-in" />
+                    </section>
+                    <span className="loader"></span>
+                </div>
             ) : (
                 <div id="SongsBook">
                     <header className="d-flex align-items-center justify-content-between p-3 bg-dark-gray text-white">

@@ -22,12 +22,13 @@ const Action = () => {
     const navigate = useNavigate();
     const currentDay = new Date().toLocaleString("en-US", { weekday: "long" });
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof prayerTimings;
+    const todayDate = new Date();
     const prayerTime = prayerTimings[today] || "No scheduled prayers today";
 
     return (
         <section id="call-to-action" className="call-to-action section dark-background">
             <div className="calendar-cls" onClick={() => navigate("/calendar")}>
-                <i className="bi bi-calendar fs-4 me-2" /> Calendar
+                <i className="position-relative bi bi-calendar fs-4 me-2" > <span className="calendar-with-date">{(todayDate).toString().split(" ")[2]}</span></i> Calendar
             </div>
             <img src="assets/img/cta-bg.jpg" alt="" className="background-image" />
             <div className="container">

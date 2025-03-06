@@ -11,6 +11,8 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeNav, setActiveNav] = useState("#hero");
 
+    const today = new Date();
+
     const handleNavClick = (e: any) => {
         // setActiveNav(e.target.getAttribute("href"));
         e.target.getAttribute("href")
@@ -72,7 +74,7 @@ const Header = () => {
                             </li>
                         ))}
                     </ul>
-                    <i className="bi bi-calendar fs-4 ms-4 me-4" onClick={() => navigate("/calendar")} />
+                    <i className="position-relative bi bi-calendar fs-4 ms-4 me-4" onClick={() => navigate("/calendar")} ><span className="calendar-with-date">{(today).toString().split(" ")[2]}</span></i>
 
                     <i className={`mobile-nav-toggle d-xl-none bi ${isMenuOpen ? "bi-x" : "bi-list"}`} onClick={handleMenuOption}></i>
 
