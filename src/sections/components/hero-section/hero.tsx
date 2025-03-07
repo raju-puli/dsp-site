@@ -20,8 +20,7 @@ const Hero = () => {
     const [isEnglish, setIsEnglish] = useState(true);
 
     const currentIndex = Math.floor(new Date().getDate() % (DailyBibleVerses.length / 2));
-    console.log(currentIndex)
-    console.log(DailyBibleVerses[0].message)
+
 
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof prayerTimings;
     const prayerTime = prayerTimings[today] || "No scheduled prayers today";
@@ -59,7 +58,7 @@ const Hero = () => {
 
     return (
         <>
-            <section id="hero" className="hero section dark-background">
+            <section id="hero" className="hero section dark-background d-flex justify-content-center align-items-center">
                 <img src="/assets/img/hero-bg.jpg" alt="Hero background" data-aos="fade-in" />
 
                 <div className="container text-center" data-aos="fade-up" data-aos-delay="100">

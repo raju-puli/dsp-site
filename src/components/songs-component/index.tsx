@@ -117,7 +117,7 @@ const Songs = () => {
 
                         {/* Logo and Title */}
                         <h3 className="d-flex align-items-center m-0 flex-grow-1 text-nowrap title-text">
-                            <img src={logo} width="80" height="80" alt="Logo" className="me-2 logo" />
+                            <img src={logo} width="90" height="90" alt="Logo" className="me-2 logo" />
                             <span>Dyvaswarupi</span>
                         </h3>
 

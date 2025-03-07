@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+
 import "./calendar.css";
 
 const festivals: Record<string, string[]> = {
@@ -23,13 +24,15 @@ const prayerTimings: Record<string, string> = {
     Saturday: "6:00 PM - 9:00 PM"
 };
 
-const Calendar: React.FC = () => {
+const Calendar = () => {
     const navigate = useNavigate();
     const today = new Date();
     const [selectedYear, setSelectedYear] = useState(today.getFullYear());
     const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
     const calendarRef = useRef<HTMLDivElement | null>(null);
     const [openState, SetOpenState] = useState(true);
+
+    console.log(today);
 
     const todayDate = today.toLocaleDateString("en-US", { weekday: "long" });
     const prayerTime = prayerTimings[todayDate] ? `Today prayer at ${prayerTimings[todayDate]}` : "No scheduled prayers today";
@@ -88,7 +91,7 @@ const Calendar: React.FC = () => {
 
     return (
         <>
-            <section className="hero section dark-background bg-image">
+            <section className="hero section dark-background calendar bg-image">
                 <img src="/assets/img/hero-bg.jpg" alt="Hero background" data-aos="fade-in" />
             </section>
             {openState ? (
@@ -96,81 +99,94 @@ const Calendar: React.FC = () => {
                     <div className="calendar-splash-text" data-aos="zoom-in" data-aos-delay="100">
                         <i className="fa-regular fa-calendar-days me-2"></i> Today is {todayDate} {months[selectedMonth]} {selectedYear}
                     </div>
-                </div>
-            ) : (
+                </div>) :
                 <>
-                    <div id="calendar" ref={calendarRef}>
+                    <div id="calendar" >
                         <button className="back-btn" onClick={() => navigate(-1)}>
                             <i className="bi bi-arrow-left-circle fs-4"></i>
                             <span className="d-none d-md-flex"> Back </span>
                         </button>
-
-                        <div className="d-flex align-items-center justify-content-center head-content">
-                            <img src={logo} width="110" height="110" alt="Logo" className="logo" />
-                            <div className="text-center">
-                                <h1>{months[selectedMonth]} {selectedYear}</h1>
-                                <p>{prayerTime}</p>
-                            </div>
-                        </div>
-
-                        <div className="calendar-grid">
-                            {/* <button className="arrow-btn" onClick={handlePrevMonth}>&lt;</button> */}
-                            <label className="d-flex align-items-center">
-                                <span className="d-none d-md-flex"> Select Year:</span>
-                                <select value={selectedYear} onChange={(e) => setSelectedYear(Number(e.target.value))}>
-                                    {Array.from({ length: 11 }, (_, i) => (
-                                        <option key={i} value={2020 + i}>{2020 + i}</option>
-                                    ))}
-                                </select>
-                            </label>
-                            <label className="d-flex align-items-center">
-                                <span className="d-none d-md-flex"> Select Month:</span>
-                                <select value={selectedMonth} onChange={(e) => setSelectedMonth(Number(e.target.value))}>
-                                    {months.map((month, i) => (
-                                        <option key={i} value={i}>{month}</option>
-                                    ))}
-                                </select>
-                            </label>
-                            {/* <button className="arrow-btn" onClick={handleNextMonth}>&gt;</button> */}
-                        </div>
-
-                        <div id="arrow_2" className="arrow-wrapper">
-                            <div className="arrow arrow--left" onClick={handlePrevMonth}>
-                                <span>Prev</span>
-                            </div>
-
-
-                            <ul className="calendar-container">
-                                {/* Weekday Headers */}
-                                {weekdays.map((day, index) => (
-                                    <div key={index} className="weekdays">
-                                        {day}
+                        <section className="ftco-section">
+                            <div className="container">
+                                <div className="row justify-content-center">
+                                    <div className="col-md-6 text-center mb-1">
+                                        <h2 className="heading-section">
+                                            <img src={logo} width="110" height="110" alt="Logo" className="logo" />
+                                            <p>{prayerTime}</p>
+                                        </h2>
                                     </div>
-                                ))}
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <div className="elegant-calencar d-md-flex">
+                                            <div className="wrap-header d-flex align-items-center img">
+                                                <p id="reset">Today</p>
+                                                <p id="reset-year">{today.getFullYear()}</p>
+                                                <div id="header" className="p-0">
+                                                    <div className="head-info">
+                                                        <div className="head-month">{months[today.getMonth()]}</div>
+                                                        <div className="head-day">{today.toString().split(" ")[2]}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="calendar-wrap">
+                                                <div className="head-month">{months[selectedMonth]}</div>
+                                                <div className="w-100 button-wrap d-flex align-items-center justify-content-center">
+                                                    <div className="pre-button" onClick={handlePrevMonth}>
+                                                        <i className="fa fa-chevron-left"></i>
+                                                    </div>
+                                                    <div className="next-button" onClick={handleNextMonth}>
+                                                        <i className="fa fa-chevron-right"></i>
+                                                    </div>
+                                                </div>
+                                                <table id="calendar">
+                                                    <thead>
+                                                        <tr>
+                                                            {weekdays.map((day, index) => (
+                                                                <th key={index}> {day}</th>
+                                                            ))}
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {Array.from({ length: 6 }).map((_, rowIndex) => (
+                                                            <tr key={rowIndex}>
+                                                                {Array.from({ length: 7 }).map((_, colIndex) => {
+                                                                    const dayIndex = rowIndex * 7 + colIndex;
+                                                                    const totalDays = getDaysInMonth(selectedYear, selectedMonth);
+                                                                    const firstDayOffset = getFirstDayOfMonth(selectedYear, selectedMonth);
 
-                                {/* Empty Slots for First Week */}
-                                {Array.from({ length: getFirstDayOfMonth(selectedYear, selectedMonth) }).map((_, index) => (
-                                    <div key={`empty-${index}`} style={{ visibility: "hidden" }}>.</div>
-                                ))}
+                                                                    if (dayIndex < firstDayOffset || dayIndex - firstDayOffset >= totalDays) {
+                                                                        return <td key={colIndex}></td>;
+                                                                    }
 
-                                {/* Days in Month */}
-                                {Array.from({ length: getDaysInMonth(selectedYear, selectedMonth) }, (_, day) => {
-                                    const dateKey = `${(selectedMonth + 1).toString().padStart(2, "0")}-${(day + 1).toString().padStart(2, "0")}`;
-                                    const dateObj = new Date(selectedYear, selectedMonth, day + 1);
-                                    const isToday = dateObj.toDateString() === today.toDateString();
-                                    return (
-                                        <li key={`${selectedYear}-${selectedMonth}-${day}`} className={`${isToday ? "highlightTodayCls" : ""}`} ><time dateTime={`${selectedYear}-${selectedMonth}-${day + 1}`}>{day + 1}</time>{festivals[dateKey] && (
-                                            festivals[dateKey].join(", ")
-                                        )}</li>
-                                    );
-                                })}
-                            </ul>
-                            <div className="arrow arrow--right" onClick={handleNextMonth}>
-                                <span>Next</span>
+                                                                    const day = dayIndex - firstDayOffset + 1;
+                                                                    const dateKey = `${(selectedMonth + 1).toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
+                                                                    const dateObj = new Date(selectedYear, selectedMonth, day);
+                                                                    const isToday = dateObj.toDateString() === today.toDateString();
+
+                                                                    return (
+                                                                        <>
+                                                                            <td key={colIndex} className={`${isToday ? "active" : festivals[dateKey] ? "active-fest" : ""}`}>
+                                                                                <time dateTime={`${selectedYear}-${selectedMonth}-${day}`}>{day}</time>
+                                                                                {festivals[dateKey] && <span className="festival-span"><i> {day} - {festivals[dateKey].join(", ")}</i> </span>}
+                                                                            </td>
+                                                                        </>
+                                                                    );
+                                                                })}
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
-                </>)}
+                </>
+            }
         </>
     );
 };
