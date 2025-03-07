@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 import useScrollLogo from "../../utility/scrollEvents";
 import DailyBibleVerses from "../../utility/dailyBibleVerses";
+import { PrayerTimings } from "../../utility/main";
 import { NavigationLinks } from "../../utility/main";
 
 import "./hero.css";
 
-const prayerTimings: Record<string, string> = {
-    Sunday: "10:30 AM - 1:00 PM",
-    Tuesday: "11:00 AM - 2:00 PM",
-    Thursday: "3:00 PM - 5:00 PM",
-    Friday: "5:00 PM - 7:00 PM",
-    Saturday: "6:00 PM - 9:00 PM"
-};
+
 
 const Hero = () => {
     const showLogo = useScrollLogo();
@@ -22,8 +17,8 @@ const Hero = () => {
     const currentIndex = Math.floor(new Date().getDate() % (DailyBibleVerses.length / 2));
 
 
-    const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof prayerTimings;
-    const prayerTime = prayerTimings[today] || "No scheduled prayers today";
+    const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof PrayerTimings;
+    const prayerTime = PrayerTimings[today] || "No scheduled prayers today";
 
     useEffect(() => {
         const interval = setInterval(() => {

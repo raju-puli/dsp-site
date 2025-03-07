@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+import { PrayerTimings } from "../../utility/main";
 
 import "./calendar.css";
 
@@ -8,21 +9,11 @@ const festivals: Record<string, string[]> = {
     "01-01": ["New Year"],
     "12-25": ["Christmas"],
     "10-24": ["Diwali (2022)"],
-    "07-04": ["Independence Day (USA)"],
     "08-15": ["Independence Day (India)"],
     "11-23": ["Thanksgiving (2023)"],
     "10-02": ["Gandhi Jayanti"],
 };
 
-const prayerTimings: Record<string, string> = {
-    Sunday: "10:30 AM - 1:00 PM",
-    Monday: "",
-    Tuesday: "11:00 AM - 2:00 PM",
-    Wednesday: "",
-    Thursday: "3:00 PM - 5:00 PM",
-    Friday: "5:00 PM - 7:00 PM",
-    Saturday: "6:00 PM - 9:00 PM"
-};
 
 const Calendar = () => {
     const navigate = useNavigate();
@@ -35,7 +26,7 @@ const Calendar = () => {
     console.log(today);
 
     const todayDate = today.toLocaleDateString("en-US", { weekday: "long" });
-    const prayerTime = prayerTimings[todayDate] ? `Today prayer at ${prayerTimings[todayDate]}` : "No scheduled prayers today";
+    const prayerTime = PrayerTimings[todayDate] ? `Today prayer at ${PrayerTimings[todayDate]}` : "No scheduled prayers today";
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

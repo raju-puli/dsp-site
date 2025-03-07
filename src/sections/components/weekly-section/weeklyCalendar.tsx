@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { PrayerTimings } from "../../utility/main";
 
 import "./weekly_calendar.css";
 
@@ -10,20 +11,13 @@ const schedule = [
     { day: "Saturday", time: "6:00 PM - 9:00 PM" },
 ];
 
-const prayerTimings: Record<string, string> = {
-    Sunday: "10:30 AM - 1:00 PM",
-    Tuesday: "11:00 AM - 2:00 PM",
-    Thursday: "3:00 PM - 5:00 PM",
-    Friday: "5:00 PM - 7:00 PM",
-    Saturday: "6:00 PM - 9:00 PM"
-};
 
 const Action = () => {
     const navigate = useNavigate();
     const currentDay = new Date().toLocaleString("en-US", { weekday: "long" });
-    const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof prayerTimings;
+    const today = new Date().toLocaleDateString("en-US", { weekday: "long" }) as keyof typeof PrayerTimings;
     const todayDate = new Date();
-    const prayerTime = prayerTimings[today] || "No scheduled prayers today";
+    const prayerTime = PrayerTimings[today] || "No scheduled prayers today";
 
     return (
         <section id="call-to-action" className="call-to-action section dark-background">

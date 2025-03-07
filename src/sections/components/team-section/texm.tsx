@@ -4,7 +4,7 @@ const Team = () => {
 
             {/* <!-- Section Title --> */}
             <div className="container section-title" data-aos="fade-up">
-                <h2>Team</h2>
+                <h2>Senior Members</h2>
                 <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             </div>
             {/* <!-- End Section Title --> */}
@@ -17,8 +17,8 @@ const Team = () => {
                         <div className="team-member d-flex align-items-start">
                             <div className="pic"><img src="assets/img/team/team-1.jpg" className="img-fluid" alt="" /></div>
                             <div className="member-info">
-                                <h4>Munna Naik</h4>
-                                <span>Chief Executive Officer</span>
+                                <h4>Paster 1</h4>
+                                <span>Position</span>
                                 <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
                                 <div className="social">
                                     <a href=""><i className="bi bi-twitter-x"></i></a>
@@ -35,8 +35,8 @@ const Team = () => {
                         <div className="team-member d-flex align-items-start">
                             <div className="pic"><img src="assets/img/team/team-2.jpg" className="img-fluid" alt="" /></div>
                             <div className="member-info">
-                                <h4>Sawjanya</h4>
-                                <span>Product Manager</span>
+                                <h4>Paster 2</h4>
+                                <span>Position</span>
                                 <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
                                 <div className="social">
                                     <a href=""><i className="bi bi-twitter-x"></i></a>
@@ -53,8 +53,8 @@ const Team = () => {
                         <div className="team-member d-flex align-items-start">
                             <div className="pic"><img src="assets/img/team/team-3.jpg" className="img-fluid" alt="" /></div>
                             <div className="member-info">
-                                <h4>Raju Puli</h4>
-                                <span>CTO</span>
+                                <h4>Paster 3</h4>
+                                <span>Position</span>
                                 <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
                                 <div className="social">
                                     <a href=""><i className="bi bi-twitter-x"></i></a>
@@ -71,8 +71,8 @@ const Team = () => {
                         <div className="team-member d-flex align-items-start">
                             <div className="pic"><img src="assets/img/team/team-4.jpg" className="img-fluid" alt="" /></div>
                             <div className="member-info">
-                                <h4>Bhoomika</h4>
-                                <span>Accountant</span>
+                                <h4>Paster 4</h4>
+                                <span>Position</span>
                                 <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
                                 <div className="social">
                                     <a href=""><i className="bi bi-twitter-x"></i></a>

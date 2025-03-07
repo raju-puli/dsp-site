@@ -17,6 +17,10 @@ table tr th:first-child {
     padding: 60px 0;
     position: relative;
     overflow: hidden;
+    height: calc(100vh - 85px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .background-image {
