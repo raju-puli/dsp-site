@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer id="footer" className="footer dark-background d-none d-md-flex pb-4">
             <div className="container">
-                <h3 className="sitename">Dyvaswarupi</h3>
+                <h3 className="sitename">DYVASWARUPI</h3>
                 <p>Dyvaswarupi Association – Spreading Faith, Hope, and Divine Love!</p>
                 <div className="social-links d-flex justify-content-center">
                     <a href=""><i className="bi bi-youtube"></i></a>

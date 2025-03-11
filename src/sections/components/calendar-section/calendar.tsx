@@ -115,8 +115,8 @@ const Calendar = () => {
                                                 <p id="reset-year">{today.getFullYear()}</p>
                                                 <div id="header" className="p-0">
                                                     <div className="head-info">
-                                                        <div className="head-month">{months[today.getMonth()]}</div>
-                                                        <div className="head-day">{today.toString().split(" ")[2]}</div>
+                                                        <div className="head-month text_shadow">{months[today.getMonth()]}</div>
+                                                        <div className="head-day text_shadow">{today.toString().split(" ")[2]}</div>
                                                     </div>
                                                 </div>
                                             </div>

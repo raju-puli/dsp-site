@@ -6,7 +6,7 @@
     width: clamp(16vw, 150px, 35vw);
     /* margin: -25vh auto; */
     /* overflow: visible; */
-    filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
     /* height: 22vh; */
     position: relative;
 }
@@ -123,10 +123,6 @@
         /* max-height: 1vh; */
     }
 }
-
-
-
-
 
 
 

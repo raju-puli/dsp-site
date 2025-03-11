@@ -1,0 +1,42 @@
+[
+    {
+        "id": "01",
+        "title": "test01",
+        "subTitle": "hello",
+        "date": "11th March 2025",
+        "url": "",
+        "thumbnailImage": ""
+    },
+    {
+        "id": "vizag",
+        "title": "test02",
+        "subTitle": "hello",
+        "date": "11th March 2025",
+        "url": "",
+        "thumbnailImage": ""
+    },
+    {
+        "id": "02",
+        "title": "test03",
+        "subTitle": "hello",
+        "date": "11th March 2025",
+        "url": "",
+        "thumbnailImage": ""
+    },
+    {
+        "id": "03",
+        "title": "test04",
+        "subTitle": "hello",
+        "date": "11th March 2025",
+        "url": "",
+        "thumbnailImage": ""
+    },
+    {
+        "id": "04",
+        "title": "test05",
+        "subTitle": "hello",
+        "date": "11th March 2025",
+        "url": "",
+        "thumbnailImage": ""
+    }
+]

@@ -29,16 +29,22 @@ const Multimedia = () => {
                                         { title: "Bible", content: "Read, reflect, and grow with the Holy Scriptures for your journey. 📖✨", icon: "bi-journal-text", comingSoon: true },
                                         { title: "Testimonials & Stories", content: "Be inspired by real-life stories of faith and transformation.", icon: "bi-quote", comingSoon: true }
                                     ].map((item, index) => (
+
                                         <div key={index} className="col-lg-4 col-md-6 col-sm-6 col-12">
-                                            <div
-                                                className="card box-shadow mb-4"
-                                                onClick={item.link ? () => navigate(item.link) : undefined}
-                                            >
-                                                <div className="card-body text-center">
-                                                    <i className={`bi ${item.icon} ${item.cls} fs-1 com-icon`}></i>
-                                                    <h4 className="card-title pricing-card-title">{item.title}</h4>
-                                                    <p className="mt-3 mb-4">{item.content}</p>
-                                                    {item.comingSoon && <span className="card-title pricing-card-title">Coming Soon...</span>}
+                                            <div className="flip-card">
+                                                <div className="flip-card-inner" onClick={item.link ? () => navigate(item.link) : undefined}>
+                                                    {/* Front Side */}
+                                                    <div className="flip-card-front">
+                                                        <div className="glass-card d-flex flex-column align-items-center justify-content-center" onClick={item.link ? () => navigate(item.link) : undefined}>
+                                                            <i className={`bi ${item.icon} ${item.cls} fs-1 neon-icon`}></i>
+                                                            <h4 className="card-title">{item.title}</h4>
+                                                        </div>
+                                                    </div>
+                                                    {/* Back Side */}
+                                                    <div className="flip-card-back">
+                                                        <p className="mt-3">{item.content}</p>
+                                                        {item.comingSoon && <span className="coming-soon steel-text">Coming Soon...</span>}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

@@ -71,6 +71,7 @@
     text-align: center;
     color: #5a5a5a;
     font-weight: bold;
+    width: 100%;
 }
 
 #SongsBook .song-index-number {

@@ -102,7 +102,7 @@ const Songs = () => {
                     <span className="loader"></span>
                 </div>
             ) : (
-                <div id="SongsBook">
+                <div id="SongsBook" className="bg-calm">
                     <header className="d-flex align-items-center justify-content-between p-3 bg-dark-gray text-white">
                         {/* Back Button */}
                         <button type="button" className="back-btn me-2" aria-label="Go Back" onClick={() => navigate(-1)}>
