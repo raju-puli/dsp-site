@@ -97,6 +97,7 @@ const Calendar = () => {
                             <i className="bi bi-arrow-left-circle fs-4"></i>
                             <span className="d-none d-md-flex"> Back </span>
                         </button>
+                        <h3 className="calendar-title">Church Calendar 2025</h3>
                         <section className="ftco-section">
                             <div className="container">
                                 <div className="row justify-content-center">
@@ -112,7 +113,7 @@ const Calendar = () => {
                                         <div className="elegant-calencar d-md-flex">
                                             <div className="wrap-header d-flex align-items-center img">
                                                 <p id="reset">Today</p>
-                                                <p id="reset-year">{today.getFullYear()}</p>
+                                                {/* <p id="reset-year">{today.getFullYear()}</p> */}
                                                 <div id="header" className="p-0">
                                                     <div className="head-info">
                                                         <div className="head-month text_shadow">{months[today.getMonth()]}</div>
@@ -121,7 +122,7 @@ const Calendar = () => {
                                                 </div>
                                             </div>
                                             <div className="calendar-wrap">
-                                                <div className="head-month">{months[selectedMonth]}</div>
+                                                <div className="head-month">{months[selectedMonth]} <a className="bold"> 2025</a></div>
                                                 <div className="w-100 button-wrap d-flex align-items-center justify-content-center">
                                                     <div className="pre-button" onClick={handlePrevMonth}>
                                                         <i className="fa fa-chevron-left"></i>

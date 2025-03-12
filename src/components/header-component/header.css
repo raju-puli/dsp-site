@@ -52,14 +52,14 @@
     margin-left: auto;
     position: absolute;
     transition: all .5s;
-    max-height: 80px;
+    max-height: 90px;
     transform: scale(1);
 }
 
 
 @media (min-width: 768px) {
     .header .logo h1 span.association-name {
-        margin-left: 80px;
+        margin-left: 85px;
     }
 }
 
@@ -70,7 +70,7 @@
     }
 
     .header .logo h1 span.association-name {
-        margin-left: 70px;
+        margin-left: 75px;
     }
 
     .header .logo h1.sitename {

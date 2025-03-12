@@ -50,6 +50,7 @@
     background-size: 200% auto !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
+    background-clip: text;
     animation: shine 3s linear infinite;
     text-transform: uppercase;
 }

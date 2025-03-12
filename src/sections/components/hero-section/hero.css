@@ -11,6 +11,13 @@
     position: relative;
 }
 
+#hero h2.hero-title-bg {
+    color: transparent;
+    background-image: linear-gradient(to right bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 
 .arrow-container {
     position: absolute;

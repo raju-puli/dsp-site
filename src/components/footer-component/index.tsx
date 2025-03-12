@@ -1,3 +1,5 @@
+import { SocialMediaLinks } from "../../sections/utility/main";
+
 import "./footer.css";
 
 const Footer = () => {
@@ -7,10 +9,9 @@ const Footer = () => {
                 <h3 className="sitename">DYVASWARUPI</h3>
                 <p>Dyvaswarupi Association – Spreading Faith, Hope, and Divine Love!</p>
                 <div className="social-links d-flex justify-content-center">
-                    <a href=""><i className="bi bi-youtube"></i></a>
-                    <a href=""><i className="bi bi-whatsapp"></i></a>
-                    <a href=""><i className="bi bi-facebook"></i></a>
-                    <a href=""><i className="bi bi-instagram"></i></a>
+                    {SocialMediaLinks.map((link) => (
+                        <a href={link.url}><i className={`bi ${link.icon}`}></i></a>
+                    ))}
                 </div>
                 <div className="container">
                     <div className="copyright">

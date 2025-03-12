@@ -19,3 +19,11 @@ export const PrayerTimings: any = {
     Friday: "5:00 PM - 7:00 PM",
     Saturday: "6:00 PM - 9:00 PM"
 };
+
+
+export const SocialMediaLinks = [
+    { id: "youtube", url: "", icon: "bi-youtube" },
+    { id: "whatsapp", url: "", icon: "bi-whatsapp" },
+    { id: "facebook", url: "", icon: "bi-facebook" },
+    { id: "instagram", url: "", icon: "bi-instagram" },
+]

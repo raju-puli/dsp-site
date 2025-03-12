@@ -379,3 +379,17 @@
     background: #00000052;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+
+#calendar .calendar-title {
+    z-index: 1;
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 3%;
+    width: 50vw;
+    margin: auto;
+}

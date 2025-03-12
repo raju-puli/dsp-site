@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import songsJson from "../../sections/json-files/songsList.json";
 import logo from "../../assets/logo.png";
 import Theme from "../../theme/theam.tsx"
+// import AudioPlayer from "../../sections/components/audio-player/audioPlayer.tsx";
 
 import "./songs.css";
 
@@ -90,7 +91,10 @@ const Songs = () => {
             setSelectedSong(filteredSongs[0].id);
         }
     };
-
+    const [audioPlayerState, setAudioPlayerState] = useState(false);
+    const onPlayTackAudio = () => {
+        setAudioPlayerState(true);
+    }
 
     return (
         <>
@@ -290,10 +294,19 @@ const Songs = () => {
                         />
                         <div className={`play-track-menu ${isOpenSongTrackMenu ? "active" : ""} p-2`}>
                             {Array.from({ length: 4 }, (_, i) => (
-                                <li key={i}>▶ Song Track {i + 1}</li>
+                                <li key={i} onClick={() => { onPlayTackAudio() }}>▶ Song Track {i + 1}</li>
                             ))}
                         </div>
                     </div>
+
+
+                    {/* Audio-Player */}
+                    {/* <div className={`audio-player-container ${audioPlayerState ? "active" : ""}`}>
+                        <button className="exit-btn" type="button" onClick={() => { setAudioPlayerState(false); }}>
+                            <i className="bi bi-x-lg bolder"></i>
+                        </button>
+                        <AudioPlayer />
+                    </div> */}
 
                 </div >
             )}

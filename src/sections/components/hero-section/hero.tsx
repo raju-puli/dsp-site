@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useScrollLogo from "../../utility/scrollEvents";
 import DailyBibleVerses from "../../utility/dailyBibleVerses";
-import { PrayerTimings, NavigationLinks } from "../../utility/main";
+import { PrayerTimings, NavigationLinks, SocialMediaLinks } from "../../utility/main";
 
 import "./hero.css";
 
@@ -61,9 +61,9 @@ const Hero = () => {
                     <div className="row justify-content-center flex-column align-items-center">
                         <img src="/assets/logo.png" className="img-fluid" alt="Website Logo" />
                         <div className="col-lg-8">
-                            <h2 className="text_shadow">ALL GLORY TO THE LORD</h2>
+                            <h2 className="text_shadow hero-title-bg">ALL GLORY TO THE LORD</h2>
                             <i>
-                                <a href="/" className="prayer-time text_shadow">
+                                <a href="/" className="prayer-time">
                                     Today is {today}, Prayer Time: {prayerTime}
                                 </a>
                             </i>
@@ -79,7 +79,17 @@ const Hero = () => {
                                         : DailyBibleVerses[currentIndex].message[1].ref}
                                 </small>
                             </p>
-                            <a href="#about" className="btn-get-started">Get Started</a>
+                            <a href="#about" className="btn-get-started d-none d-md-inline-block">Get Started</a>
+                            <div className="footer p-0 d-md-none pt-4" style={{ background: "none" }}>
+                                <div className="container flex-column">
+                                    <i>Follow Us On :</i>
+                                    <div className="social-links d-flex justify-content-center mt-2">
+                                        {SocialMediaLinks.map((link) => (
+                                            <a href={link.url}><i className={`bi ${link.icon}`}></i></a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
