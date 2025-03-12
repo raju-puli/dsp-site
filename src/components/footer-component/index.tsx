@@ -10,7 +10,7 @@ const Footer = () => {
                 <p>Dyvaswarupi Association – Spreading Faith, Hope, and Divine Love!</p>
                 <div className="social-links d-flex justify-content-center">
                     {SocialMediaLinks.map((link) => (
-                        <a href={link.url}><i className={`bi ${link.icon}`}></i></a>
+                        <a key={link.id} href={link.url}><i className={`bi ${link.icon}`}></i></a>
                     ))}
                 </div>
                 <div className="container">

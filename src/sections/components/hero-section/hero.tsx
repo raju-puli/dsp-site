@@ -85,7 +85,7 @@ const Hero = () => {
                                     <i>Follow Us On :</i>
                                     <div className="social-links d-flex justify-content-center mt-2">
                                         {SocialMediaLinks.map((link) => (
-                                            <a href={link.url}><i className={`bi ${link.icon}`}></i></a>
+                                            <a key={link.id} href={link.url}><i className={`bi ${link.icon}`}></i></a>
                                         ))}
                                     </div>
                                 </div>
