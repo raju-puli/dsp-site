@@ -63,7 +63,7 @@ const Hero = () => {
                         <div className="col-lg-8">
                             <h2 className="text_shadow hero-title-bg">ALL GLORY TO THE LORD</h2>
                             <i>
-                                <a href="/" className="prayer-time">
+                                <a className="prayer-time">
                                     Today is {today}, Prayer Time: {prayerTime}
                                 </a>
                             </i>
@@ -82,7 +82,7 @@ const Hero = () => {
                             <a href="#about" className="btn-get-started d-none d-md-inline-block">Get Started</a>
                             <div className="footer p-0 d-md-none pt-4" style={{ background: "none" }}>
                                 <div className="container flex-column">
-                                    <i>Follow Us On :</i>
+                                    <i className="mb-2">Follow Us On :</i>
                                     <div className="social-links d-flex justify-content-center mt-2">
                                         {SocialMediaLinks.map((link) => (
                                             <a key={link.id} href={link.url}><i className={`bi ${link.icon}`}></i></a>

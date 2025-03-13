@@ -8,10 +8,15 @@ const Footer = () => {
             <div className="container">
                 <h3 className="sitename">DYVASWARUPI</h3>
                 <p>Dyvaswarupi Association – Spreading Faith, Hope, and Divine Love!</p>
-                <div className="social-links d-flex justify-content-center">
-                    {SocialMediaLinks.map((link) => (
-                        <a key={link.id} href={link.url}><i className={`bi ${link.icon}`}></i></a>
-                    ))}
+                <div className="social-links">
+                    <div className="container flex-column">
+                        <i>Follow Us On :</i>
+                        <div className="social-links d-flex justify-content-center mt-2">
+                            {SocialMediaLinks.map((link) => (
+                                <a key={link.id} href={link.url}><i className={`bi ${link.icon}`}></i></a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
                 <div className="container">
                     <div className="copyright">
